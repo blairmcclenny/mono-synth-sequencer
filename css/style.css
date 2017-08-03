@@ -1,0 +1,130 @@
+@import "./colors.css";
+@import "./reset.css";
+@import "./materialicons.css";
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.module {
+  background-color: var(--gray);
+  margin: .75rem;
+  padding: 1rem;
+}
+
+.component {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.fields {
+  display: flex;
+}
+
+.fields input {
+  padding-left: .5rem;
+  max-width: 5rem;
+  font-size: .875rem;
+  border: 1px solid var(--blue);
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+}
+
+.fields .controls {
+  display: flex;
+  flex-flow: column;
+}
+
+.fields .controls button {
+  padding: 2px 4px 2px;
+}
+
+.fields .controls button:first-child {
+  border-radius: 0 3px 0 0;
+}
+
+.fields .controls button:nth-child(2) {
+  border-radius: 0 0 3px 0;
+}
+
+#settings {
+  border-right: 4px solid var(--blue);
+  border-left: 4px solid var(--blue);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+#settings button {
+  background-color: var(--blue);
+}
+
+#sequencer {
+  display: grid;
+  grid-template-columns: 2fr 7fr 6fr 3fr;
+  grid-gap: 2rem;
+  border-right: 4px solid var(--green);
+  border-left: 4px solid var(--green);
+}
+
+#sequencer button {
+  background-color: var(--green);
+}
+
+#sequencer .pattern {
+  background-color: #ccc;
+  color: #666;
+}
+
+#sequencer .pattern.active {
+  background-color: var(--green);
+  color: var(--black);
+}
+
+#sequencer .steps .set {
+  color: var(--green);
+}
+
+#sequencer .steps .current {
+  animation: .15s linear 0s infinite alternate flash-step;
+}
+
+@keyframes flash-step {
+  from { color: var(--green); } to { color: var(--black); }
+}
+
+#keyboard {
+  text-align: center;
+  border-right: 4px solid #e8bb2c;
+  border-left: 4px solid #e8bb2c;
+}
+
+#keyboard ol {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#keyboard li button {
+  margin-left: 3px;
+  margin-right: 3px;
+  min-width: 50px;
+  min-height: 100px;
+}
+
+.key {
+  background-color: var(--orange);
+}
+
+.rest {
+  background-color: var(--yellow);
+}
+
+.faded {
+  opacity: .5;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Sequencer</title>
+  </head>
+  <body>
+
+    <main>
+    <div class="app">
+
+      <section id="settings" class="module">
+        <section class="component">
+          <h2>Key</h2>
+          <div class="fields">
+            <input type="text" value="C" id="key" readonly>
+            <div class="controls">
+              <button id="btn-key-up"><i class="material-icons md-18">keyboard_arrow_up</i></button>
+              <button id="btn-key-down"><i class="material-icons md-18">keyboard_arrow_down</i></button>
+            </div>
+          </div>
+        </section>
+        <section class="component">
+          <h2>Mode</h2>
+          <div class="fields">
+            <input type="text" id="mode" value="Ionian" readonly>
+            <div class="controls">
+              <button id="btn-mode-up"><i class="material-icons md-18">keyboard_arrow_up</i></button>
+              <button id="btn-mode-down"><i class="material-icons md-18">keyboard_arrow_down</i></button>
+            </div>
+          </div>
+        </section>
+        <section class="component">
+          <h2>Tempo</h2>
+          <div class="fields">
+            <input type="number" id="bpm" readonly>
+            <div class="controls">
+              <button id="btn-bpm-up"><i class="material-icons md-18">keyboard_arrow_up</i></button>
+              <button id="btn-bpm-down"><i class="material-icons md-18">keyboard_arrow_down</i></button>
+            </div>
+          </div>
+        </section>
+        <section class="component">
+          <h2>Oscillator</h2>
+          <nav>
+            <ul>
+              <li><button id="btn-square" value="sine" class="wave">Sine</button></li>
+              <li><button id="btn-square" value="square" class="wave">Square</button></li>
+              <li><button id="btn-sawtooth" value="sawtooth" class="wave">Sawtooth</button></li>
+              <li><button id="btn-square" value="triangle" class="wave">Triangle</button></li>
+            </ul>
+          </nav>
+        </section>
+        <section class="component">
+          <h2>Sustain</h2>
+          <input type="checkbox" id="toggle-sustain">
+        </section>
+        <section class="component">
+          <h2>Glide</h2>
+          <input type="checkbox" id="toggle-glide">
+        </section>
+        <section class="component">
+          <h2>Filter</h2>
+          <input type="range" id="filter">
+        </section>
+        <section class="component">
+          <h2>Delay</h2>
+          <input type="range" id="delay" value="0">
+        </section>
+      </section>
+
+
+    <section id="sequencer" class="module">
+      <section class="component">
+        <h2>Run</h2>
+        <button id="btn-run"><i class="material-icons md-36">play_arrow</i></button>
+      </section>
+      <section class="component">
+        <h2>Patterns</h2>
+        <nav>
+          <ol>
+            <li>
+              <button class="pattern"><i class="material-icons md-36">more_horiz</i></button>
+              <!-- <input type="checkbox" class="toggle-pattern"> -->
+            </li>
+            <li>
+              <button class="pattern"><i class="material-icons md-36">more_horiz</i></button>
+              <!-- <input type="checkbox" class="toggle-pattern"> -->
+            </li>
+            <li>
+              <button class="pattern"><i class="material-icons md-36">more_horiz</i></button>
+              <!-- <input type="checkbox" class="toggle-pattern"> -->
+            </li>
+            <li>
+              <button class="pattern"><i class="material-icons md-36">more_horiz</i></button>
+              <!-- <input type="checkbox" class="toggle-pattern"> -->
+            </li>
+          </ol>
+        </nav>
+      </section>
+
+      <section class="component">
+        <h2>Steps</h2>
+        <ol class="steps">
+          <li class="step"><i class="material-icons md-18">fiber_manual_record</i></li>
+          <li class="step"><i class="material-icons md-18">fiber_manual_record</i></li>
+          <li class="step"><i class="material-icons md-18">fiber_manual_record</i></li>
+          <li class="step"><i class="material-icons md-18">fiber_manual_record</i></li>
+          <li class="step"><i class="material-icons md-18">fiber_manual_record</i></li>
+          <li class="step"><i class="material-icons md-18">fiber_manual_record</i></li>
+          <li class="step"><i class="material-icons md-18">fiber_manual_record</i></li>
+          <li class="step"><i class="material-icons md-18">fiber_manual_record</i></li>
+        </ol>
+      </section>
+      <section class="component">
+        <h2>Edit</h2>
+        <ul>
+          <li><button id="btn-clear">Clear</button></li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="keyboard" class="module">
+      <ol>
+        <li><button class="key rest"></button></li>
+        <li><button class="key"></button></li>
+        <li><button class="key"></button></li>
+        <li><button class="key"></button></li>
+        <li><button class="key"></button></li>
+        <li><button class="key"></button></li>
+        <li><button class="key"></button></li>
+        <li><button class="key"></button></li>
+        <li><button class="key"></button></li>
+      </ol>
+    </section>
+
+    </div>
+    </main>
+
+    <script src="./lib/index.js"></script>
+
+  </body>
+</html>
