@@ -12,8 +12,8 @@ main {
 
 .module {
   background-color: var(--gray);
-  margin: .75rem;
-  padding: 1rem;
+  margin: .5rem;
+  padding: .625rem;
 }
 
 .component {
@@ -56,8 +56,8 @@ main {
   border-right: 4px solid var(--blue);
   border-left: 4px solid var(--blue);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2rem;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  grid-row-gap: 1rem;
 }
 
 #settings button {
@@ -65,11 +65,16 @@ main {
 }
 
 #sequencer {
-  display: grid;
-  grid-template-columns: 2fr 7fr 6fr 3fr;
-  grid-gap: 2rem;
   border-right: 4px solid var(--green);
   border-left: 4px solid var(--green);
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 3fr;
+  grid-row-gap: 1rem;
+}
+
+#sequencer .edit {
+  grid-column: 1;
+  grid-row: 2;
 }
 
 #sequencer button {
@@ -105,16 +110,16 @@ main {
 }
 
 #keyboard ol {
-  display: flex;
+  /*display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: center;*/
 }
 
 #keyboard li button {
-  margin-left: 3px;
-  margin-right: 3px;
-  min-width: 50px;
-  min-height: 100px;
+  margin-left: 1px;
+  margin-right: 1px;
+  min-width: 25px;
+  min-height: 50px;
 }
 
 .key {
@@ -127,4 +132,50 @@ main {
 
 .faded {
   opacity: .5;
+}
+
+@media (min-width: 425px) {
+
+  .module {
+    padding: 1rem;
+  }
+
+  #sequencer {
+    grid-template: 1fr 1fr / 1fr 2fr;
+  }
+
+  #keyboard li button {
+    margin-left: 2px;
+    margin-right: 2px;
+    min-width: 30px;
+    min-height: 60px;
+  }
+}
+
+@media (min-width: 725px) {
+
+  .module {
+    padding: 1.5rem;
+  }
+
+  #settings {
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 2rem;
+  }
+
+  #sequencer {
+    grid-template: auto / 2fr 6fr 5fr 3fr;
+  }
+
+  #sequencer .edit {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  #keyboard li button {
+    margin-left: 3px;
+    margin-right: 3px;
+    min-width: 50px;
+    min-height: 100px;
+  }
 }
